@@ -1,1 +1,0 @@
-First Journal Entry Here

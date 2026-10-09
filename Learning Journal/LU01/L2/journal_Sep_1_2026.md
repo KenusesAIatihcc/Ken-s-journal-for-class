@@ -1,7 +1,7 @@
 # Unit CIS_114_01 - 26/FA 
 
 # Lecture 
-Date: Sep 1, 2026
+Date: enter date
 
 ## Rough outline of lecture
 we talked about the basics of class
