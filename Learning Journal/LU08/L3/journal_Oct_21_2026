@@ -1,0 +1,59 @@
+# Unit X Lecture X - Training Data and Shape Classification
+
+Date: October 21, 2026
+
+## Key Concepts
+
+- Machine learning models need training data.
+- Bad training data can make the model less accurate.
+- The model learns patterns from examples.
+- More examples can help the model improve.
+- The shape classifier was trained on stars, circles, and triangles.
+- The model could then guess a new shape.
+- The training was done locally on the computer.
+- ML5.js was used to make the machine learning code easier.
+
+## What is a Shape Classifier?
+
+A shape classifier is a small machine learning model that tries to identify what someone draws.
+
+In class, we drew stars, circles, and triangles to create the training data. After training, we could draw another shape and the model would guess what it was, it gave it a probability score. 
+
+The model was not really looking at an image. It kept track of the points that were drawn and used those points as the data.
+
+## Direct Quote from Instructor
+
+> "You create training data, you train the AI model, and then you give the AI model something new."
+
+- Luke
+
+## Real-World Applications
+
+* Recognizing images or objects.
+* Detecting patterns in data.
+* Content filtering.
+* License plate recognition.
+* Sorting things into different groups.
+* Training models to recognize handwriting or shapes.
+* Running smaller machine learning models directly on a computer.
+
+## Personal Reflection
+
+The biggest thing I learned from this lecture is how important the training data is.
+
+If the examples are wrong or messy, the model can learn the wrong thing. I liked that we could actually train the model ourselves and then test it right away.
+
+It also helped me understand that the AI does not really know what a star or triangle is. It is just learning patterns from the information we give it.
+
+## Shape Classification Process Flow
+
+
+flowchart LR
+  Start["Create Training Examples"] --> Data["Save Drawing Data"]
+  Data --> Train["Train the Model"]
+  Train --> Draw["Draw a New Shape"]
+  Draw --> Predict["Model Makes a Guess"]
+  Predict --> Check{"Correct?"}
+  Check -->|No| Improve["Add Better Training Data"]
+  Improve --> Train
+  Check -->|Yes| Done["Use the Model"]

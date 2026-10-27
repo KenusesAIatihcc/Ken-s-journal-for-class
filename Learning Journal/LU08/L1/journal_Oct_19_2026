@@ -1,0 +1,55 @@
+# Unit X Lecture X - Genetic Algorithms and Machine Learning
+
+Date: October 19, 2026
+
+## Key Concepts
+
+- Genetic algorithms are based on natural selection.
+- A group of random solutions is created first.
+- Each solution is tested and given a score.
+- The best solutions are kept.
+- The weaker solutions are removed.
+- The better solutions are used to create the next generation.
+- Small mutations help create new solutions.
+- This process repeats until the results improve.
+
+## What is a Genetic Algorithm?
+
+A genetic algorithm is a way to solve a problem by testing many different solutions.
+
+The program starts with a random group. Each one is tested using a fitness score. The best ones survive and are used to create the next group.
+
+Over many generations, the results can slowly improve.
+
+## Direct Quote from Instructor
+
+> "You generate your population, you let them perform a task, you grade them on that task."
+
+- Luke
+
+## Real-World Applications
+
+* Training a computer to play simple games.
+* Finding better solutions through repeated testing.
+* Testing different reward and punishment systems.
+* Improving game behavior over many generations.
+* Learning how machine learning can work without large language models.
+* Using fitness scores to decide which solutions should continue.
+
+## Personal Reflection
+
+The main thing I learned from this lecture is that machine learning does not always mean ChatGPT or other language models.
+
+I thought the Pong example made genetic algorithms easier to understand. The program started with paddles that were mostly bad at the game, but the better ones were kept and used for the next generation.
+
+I also learned that the way you score the results is really important. If the rewards or punishments are not set up well, the program can learn the wrong behavior.
+
+## Genetic Algorithm Process Flow
+
+flowchart LR
+  Start["Create Random Population"] --> Test["Test Each Solution"]
+  Test --> Score["Give Fitness Score"]
+  Score --> Select["Keep Best Solutions"]
+  Select --> Reproduce["Create Next Generation"]
+  Reproduce --> Mutate["Add Small Mutations"]
+  Mutate --> Test

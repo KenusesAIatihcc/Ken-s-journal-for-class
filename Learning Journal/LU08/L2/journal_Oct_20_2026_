@@ -1,0 +1,59 @@
+# Unit X Lecture X - TensorFlow and Neural Networks
+
+Date: October 20, 2026
+
+## Key Concepts
+
+- TensorFlow is a tool used for machine learning.
+- Neural networks use layers of connected nodes.
+- Each input can have a different weight.
+- Training changes the weights to improve the model.
+- Models need training data before they can make useful predictions.
+- More training does not always mean better results.
+- Machine learning can run locally on normal computers and phones.
+- AI is used for things like image processing, speech recognition, and predictions.
+
+## What is TensorFlow?
+
+TensorFlow is a machine learning library.
+
+It can be used to build and train neural networks. These networks take in data, process it through different layers, and produce an output.
+
+The class also showed that TensorFlow can run on different devices, including computers, phones, and web browsers.
+
+## Direct Quote from Instructor
+
+> "When people talk about training an AI, they are changing the weights."
+
+- Luke
+
+## Real-World Applications
+
+* Image and object recognition.
+* Speech-to-text on phones.
+* Improving phone camera pictures.
+* Fraud detection.
+* Music recommendations.
+* Self-driving systems.
+* Making predictions from data.
+* Recognizing simple shapes or patterns.
+
+## Personal Reflection
+
+The main thing I learned from this lecture is that neural networks are really just math being used to find patterns.
+
+I liked seeing the model improve as it trained. The examples also made it easier to understand what weights and training data actually do.
+
+I also did not realize how much machine learning already happens on phones. Things like voice detection and camera processing use the same basic ideas we are learning in class.
+
+## Neural Network Process Flow
+
+
+flowchart LR
+  Start["Create Training Data"] --> Input["Give Data to Model"]
+  Input --> Train["Train Neural Network"]
+  Train --> Weights["Adjust Weights"]
+  Weights --> Test["Test Predictions"]
+  Test --> Check{"Good Enough?"}
+  Check -->|No| Train
+  Check -->|Yes| Use["Use the Model"]
