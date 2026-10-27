@@ -1,0 +1,60 @@
+# Unit X Lecture X - Custom Models with Ollama
+
+Date: Oct 5th 2026
+
+## Key Concepts
+
+- A custom model does not mean training a brand-new AI model.
+- We can start with an existing model and give it rules for how it should act.
+- Ollama uses a model file to set up a custom model.
+- The `FROM` section tells Ollama which base model to use.
+- Parameters can change how the model responds.
+- Temperature controls how random or creative the answers can be.
+- The system prompt is one of the most important parts of the model file.
+- A system prompt gives the AI instructions that it should follow every time it is used.
+- A better base model will usually make the custom model better too.
+
+## What is a Custom Model?
+
+A custom model is a version of an existing AI model that has been set up for a certain job. We are not changing the main model or training it from scratch. Instead, we give it instructions, settings, and examples.
+
+The class example was an email model called Email Guru. The goal was to let the user enter a subject line and have the model create an email without explaining the task every time.
+
+## Direct Quote from Instructor
+
+> "We're not training the model, we're just changing how it behaves."
+
+- Instructor
+
+## Real-World Applications
+
+* A company could create an AI tool for writing emails.
+* A business could give a model access to its own documents and information.
+* A development team could make an AI assistant that understands its code and documentation.
+* A custom model could be used for things like flashcards, schedules, or games.
+* System prompts can also control things like tone, length, formatting, and what the model should avoid.
+* A model can be run locally when privacy or company data is important.
+
+## Personal Reflection
+
+This lecture helped me understand what people mean when they say they made a custom AI model. I used to think that meant they trained a completely new model. The class showed that it can be much simpler than that. You can take a model that already exists and give it instructions for one job.
+
+The system prompt was probably the most important part to me. It controls how the model is supposed to respond each time. I also thought it was interesting that changing small settings, like temperature, can change the answers.
+
+The model did not always follow the instructions perfectly. For example, it still tried to use emojis even when it was told not to. That showed me that a custom model is still limited by the original model. It can be improved, but it will not always do exactly what you want.
+
+## Custom Model Process Flow
+
+```mermaid
+flowchart LR
+  Start["Choose Base Model"] --> File["Create Model File"]
+  File --> Params["Set Parameters"]
+  Params --> System["Add System Prompt"]
+  System --> Copy["Copy File to Container"]
+  Copy --> Create["Create Custom Model"]
+  Create --> Test["Test the Model"]
+  Test --> Improve{"Works Well?"}
+  Improve -->|Yes| Finish["Use the Model"]
+  Improve -->|No| Edit["Change Prompt or Settings"]
+  Edit --> Test
+```

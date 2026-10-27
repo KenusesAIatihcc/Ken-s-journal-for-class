@@ -1,0 +1,75 @@
+# Unit X Lecture X - Custom AI and Tic-Tac-Toe
+
+Date: Oct 6, 2026
+
+## Key Concepts
+
+- A custom AI model can be connected to a website or program.
+- The tic-tac-toe model was told to return one move as a row and column.
+- The game board had to be changed into text before sending it to the AI.
+- Ollama can be called through an API from a local program.
+- The program has to read the AI response and turn it back into a game move.
+- Small AI models do not always follow instructions correctly.
+- AI does not remember past messages unless the history is sent again.
+- AI is not always better than normal programming.
+
+## How the Tic-Tac-Toe AI Works
+
+The class used a custom Ollama model to play tic-tac-toe.
+
+The website keeps track of the game board. When it is the AI's turn, the board is changed into text and sent to the model. The AI is supposed to answer with a move such as `2,2`.
+
+The program then reads that answer and places the AI move on the board.
+
+## Direct Quote from Instructor
+
+> "This is a very bad use case of AI."
+
+- Instructor
+
+## Problems With the AI
+
+* The AI sometimes returned extra words instead of only numbers.
+* It sometimes picked a space that was already taken.
+* A bad response could cause the game to stop working.
+* The small model could only play a few moves correctly sometimes.
+* A larger model or better system prompt could improve the results.
+* The program could also retry when the AI gives a bad answer.
+
+## Why Normal Code Can Be Better
+
+The normal tic-tac-toe version used a small amount of JavaScript and ran very quickly.
+
+The AI version needed a large model running in memory and was less reliable. This showed that adding AI does not automatically make a program better. Sometimes simple code is the better choice.
+
+## Personal Reflection
+
+I thought the biggest point from this lecture was that AI should only be used when it actually helps.
+
+The tic-tac-toe example was useful because the normal version worked better than the AI version. The AI could make moves, but it did not always follow the format it was given.
+
+I also learned how a website can send information to Ollama through an API. The program sends the board as text, waits for the AI response, and then tries to use that response in the game.
+
+## Basic Process
+
+```mermaid
+flowchart LR
+    Board["Get Game Board"] --> Text["Change Board to Text"]
+    Text --> AI["Send to Ollama"]
+    AI --> Response["Get AI Response"]
+    Response --> Check{"Valid Move?"}
+    Check -->|Yes| Move["Make Move"]
+    Check -->|No| Retry["Retry or Restart"]
+```
+
+## Homework
+
+For the homework, we need to make our own custom AI model and connect it to a front end.
+
+Some example ideas were:
+
+- Mad Libs
+- Flashcards
+- Schedule builder
+
+The main challenge is getting the AI to return information in a format that the front end can understand.

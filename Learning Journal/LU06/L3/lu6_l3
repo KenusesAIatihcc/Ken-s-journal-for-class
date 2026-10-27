@@ -1,0 +1,59 @@
+# Unit X Lecture X - Vibe Coding and AI Programming
+
+Date: Oct 7, 2026
+
+## Key Concepts
+
+- Vibe coding is using AI to make code without really understanding the code.
+- AI can write code quickly, but that does not mean the code is good.
+- Code that runs can still be wrong.
+- Testing is important when using AI-generated code.
+- AI often creates more code than needed.
+- Better prompts can improve the result.
+- AI works better when it has many similar examples to learn from.
+- AI should be used as a tool, not as a replacement for knowing how to program.
+
+## What is Vibe Coding?
+
+Vibe coding is when someone tells AI what they want and lets it create the code for them. If something breaks, they may just tell the AI to fix it instead of reading the code themselves.
+
+The problem is that the person may not know what the AI changed or why something stopped working. This can make simple problems harder to fix later.
+
+## Direct Quote from Instructor
+
+> "Compiled code, meaning it runs, does not mean correct code."
+
+- Instructor
+
+## Real-World Applications
+
+* AI can help create websites and simple programs.
+* It can be used to write HTML, CSS, and JavaScript.
+* Unit tests can help check smaller parts of AI-generated code.
+* Integration tests can check if changes broke the rest of a program.
+* AI can help find and fix errors when given the error message.
+* More detailed prompts can help AI create something closer to what the user wants.
+* AI can also help make things like SVG graphics or simple games.
+
+The lecture showed that testing and checking the AI's work is still important, especially because AI can make code that works but is inefficient or incorrect.
+
+## Personal Reflection
+
+The biggest thing I got from this lecture is that AI can make programming faster, but it can also create more problems if you do not understand the code.
+
+I thought it was interesting that the AI could make a full website very quickly, but it also created way more code than was needed. Some parts of the website were also strange or did not work the way they should.
+
+The lecture also showed why knowing basic programming still matters. If the AI makes a mistake, you need to understand enough to test it and figure out what went wrong. I think AI is useful for helping with code, but it should not do all of the thinking for you.
+
+## Vibe Coding Process Flow
+
+```mermaid
+flowchart LR
+  Start["Describe What You Want"] --> AI["AI Creates Code"]
+  AI --> Run["Run the Program"]
+  Run --> Check{"Does It Work?"}
+  Check -->|Yes| Review["Review the Result"]
+  Check -->|No| Error["Give Error Back to AI"]
+  Error --> AI
+  Review --> Test["Test the Code"]
+```
