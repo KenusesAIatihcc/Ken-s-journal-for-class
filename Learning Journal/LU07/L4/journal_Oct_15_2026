@@ -1,0 +1,56 @@
+# Unit X Lecture X - n8n, MySQL, and AI Workflows
+
+Date: October 15, 2026
+
+## Key Concepts
+
+- n8n can connect to a database.
+- MySQL can be run locally with Docker.
+- A SQL file can be used to create and fill a database.
+- n8n workflows can read data from MySQL.
+- Database data can be saved into files like Excel sheets.
+- AI can also be added to a workflow.
+- Local AI can sometimes be used instead of a paid online API.
+- Workflows usually need some setup before they work correctly.
+
+## What is a Database Workflow?
+
+A database workflow is a set of steps that connects to a database and does something with the data.
+
+In class, n8n was connected to a MySQL database. The workflow could read a table and save the information into an Excel file.
+
+A second example used AI along with the database. The goal was to let the AI work with the data inside the workflow.
+
+## Direct Quote from Instructor
+
+
+## Real-World Applications
+
+* Moving data from a database into a spreadsheet.
+* Filtering customer or business data.
+* Using database information to send emails.
+* Connecting AI to a database.
+* Replacing repeated database tasks with an automated workflow.
+* Using local AI instead of paying for an online API.
+* Connecting several tools together in one process.
+
+## Personal Reflection
+
+The main thing I learned from this lecture is that n8n can do more than simple automation.
+
+I thought it was useful that it could connect directly to a database and move the data into something like Excel. That could save time if the same report needs to be made often.
+
+The AI example was also interesting because it showed that a local model can be used in a workflow. The setup seemed like the hardest part, but once everything is connected, the workflow can do a lot automatically.
+
+## Database Workflow Process Flow
+
+flowchart LR
+  Start["Start Workflow"] --> DB["Connect to MySQL"]
+  DB --> Read["Read Database Data"]
+  Read --> Process["Process the Data"]
+  Process --> AI{"Use AI?"}
+  AI -->|Yes| Model["Send Data to AI"]
+  Model --> Output["Create Output"]
+  AI -->|No| Output
+  Output --> Save["Save or Send Results"]
+```

@@ -1,0 +1,53 @@
+# Unit X Lecture X - Using AI with SQL
+
+Date: Oct 12, 2026 
+
+## Key Concepts
+
+- SQL is a language used to work with databases.
+- SQLite is a small and simple type of SQL database.
+- Databases organize information into tables, rows, and columns.
+- Primary keys identify records.
+- Foreign keys connect information between tables.
+- AI can turn a normal sentence into a SQL query.
+- The AI needs to know the structure of the database before writing a good query.
+- AI-generated SQL should still be tested before using it.
+
+## What is SQL?
+
+SQL stands for Structured Query Language. It is used to store, find, update, and organize data in a database.
+
+A relational database separates information into different tables. Those tables can be connected using IDs. This helps avoid storing the same information over and over.
+
+SQLite is a lightweight database that stores everything in one file. It is simple and does not need many extra dependencies.
+
+## Direct Quote from Instructor
+
+
+## Real-World Applications
+
+* SQL can be used to track inventory.
+* It can connect information from several tables.
+* A business can use queries to build reports.
+* AI can help write harder SQL queries from a plain-English request.
+* The finished query can be added to a program and reused.
+* SQL is also useful for jobs involving databases and data analytics.
+
+## Personal Reflection
+
+The main thing I learned from this lecture is that AI can be really useful for SQL.
+
+Some SQL queries can get long and confusing, especially when they need information from several tables. Being able to explain what I want in normal words and have AI create the query can save a lot of time.
+
+I also liked that SQL is easy to test. You can run the query and look at the results right away. If the data is wrong, you know the query needs to be changed. I still think knowing the basics is important because it helps you explain what you want and notice when the AI makes a mistake.
+
+## AI and SQL Process Flow
+
+flowchart LR
+  Start["Give AI the Database"] --> Request["Explain What Data You Need"]
+  Request --> Query["AI Writes SQL Query"]
+  Query --> Run["Run the Query"]
+  Run --> Check{"Results Correct?"}
+  Check -->|Yes| Use["Use Query in Program"]
+  Check -->|No| Fix["Change Prompt or Query"]
+  Fix --> Run

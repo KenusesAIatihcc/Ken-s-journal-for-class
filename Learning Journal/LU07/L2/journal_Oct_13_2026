@@ -1,0 +1,42 @@
+# Unit X Lecture X - AI and OpenSCAD
+
+Date: October 13, 2026
+
+## Key Concepts
+
+- OpenSCAD makes 3D models by using code.
+- Basic shapes can be moved, rotated, and resized.
+- Variables make models easier to change.
+- AI can write OpenSCAD code from a description.
+- AI works better when the instructions are clear.
+- AI can write correct code but still make the wrong shape.
+- OpenSCAD files can be turned into STL files for 3D printing.
+
+## What is OpenSCAD?
+
+OpenSCAD is a program that makes 3D models with code.
+
+Instead of dragging shapes around, you type instructions. You can make cubes, cylinders, and other shapes, then move or rotate them to build a larger model.
+
+One useful part is that you can change a few numbers and quickly change the size of the model.
+
+## Direct Quote from Instructor
+
+> "Since the input is code, AI obviously can generate that."
+
+- Luke
+
+## Real-World Applications
+
+* OpenSCAD can be used to make parts for 3D printing.
+* AI can help write the code for a model.
+* Variables make it easy to make different sizes of the same object.
+* Simple shapes like dice and washers worked well with AI.
+* More exact objects, like brackets, were harder for AI.
+* Models can be exported as STL files and prepared for a 3D printer.
+
+## Personal Reflection
+
+I thought it was interesting that a 3D model could be made just by writing code.
+
+AI also made this easier because it could create most of the OpenSCAD code from a normal description. The simple objects worked pretty well, but the harder objects showed that AI does not really understand 

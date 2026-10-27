@@ -1,0 +1,60 @@
+# Unit X Lecture X - n8n and Workflow Automation
+
+Date: October 14, 2026
+
+## Key Concepts
+
+- n8n is a tool for building automated workflows.
+- Workflows connect different apps and services together.
+- Many workflows can run without much code.
+- Automation can save a lot of time on repeated tasks.
+- AI can be added into a workflow.
+- Workflows can also connect to databases, email, Slack, Discord, and other services.
+- Human-in-the-loop means a person still approves something before the workflow continues.
+- Automation is useful, but giving AI too much control can cause problems.
+
+## What is n8n?
+
+n8n is a workflow automation tool.
+
+Instead of writing a full program, you connect different steps together like blocks. Each block can do something different, such as reading an email, sending data to AI, updating a database, or sending a message.
+
+The main goal is to automate work that would normally have to be done by hand.
+
+## Direct Quote from Instructor
+
+> "You're not writing Python or Java code. You're just connecting Lego blocks together."
+
+- Luke
+
+## Real-World Applications
+
+* Automating emails and replies.
+* Sending information between different apps.
+* Connecting AI to a local model.
+* Reading and updating databases.
+* Moderating Discord or other chat systems.
+* Creating business workflows without building a full program.
+* Using a person to approve AI decisions before they are completed.
+
+## Personal Reflection
+
+The main thing I learned from this lecture is that automation can save a lot of time when the same task has to be done over and over.
+
+I liked that n8n does not require a lot of normal programming. You can connect different steps together and make a workflow without writing everything from scratch.
+
+The human-in-the-loop part also made sense to me. AI can help make a decision or create a response, but a person can still check it before anything happens. I think that makes automation safer and more useful.
+
+## Workflow Automation Process Flow
+
+
+flowchart LR
+  Start["Task Starts"] --> Input["Get Information"]
+  Input --> Process["Workflow Processes It"]
+  Process --> AI["AI or Service Handles Task"]
+  AI --> Check{"Human Approval Needed?"}
+  Check -->|Yes| Review["Person Reviews"]
+  Review --> Action["Complete Action"]
+  Check -->|No| Action
+  Action --> End["Workflow Ends"]
+```
