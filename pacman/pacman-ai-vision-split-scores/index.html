@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pac-Man</title>
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+        <!-- p5.js Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js" defer></script>
+        <!-- Neataptic AI Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/neataptic/1.4.7/neataptic.js" defer></script>
+        <!-- Our JS -->
+        <script src="js/AISettings.js" defer></script>
+        <script src="js/GeneticAlgorithm.js" defer></script>
+        <script src="js/Pacman.js" defer></script>
+        <script src="js/Ghost.js" defer></script>
+        <script src="js/script.js" defer></script>
+        <script src="js/Rewards.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>
+                <img src="assets/logo.svg" alt="Pac-Man Logo" />
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="boardCraftingTool.html">Board Crafting Tool</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="game-container">
+                <section>
+                    <table>
+                        <caption>
+                            Simulation Statistics
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Generation</th>
+                                <th scope="col">Agent</th>
+                                <th scope="col">Player High</th>
+                                <th scope="col">AI Best</th>
+                                <th scope="col">Max Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="gen-display">1</td>
+                                <td id="agent-display">-</td>
+                                <td id="player-highscore-display">000000</td>
+                                <td id="ai-highscore-display">000000</td>
+                                <td id="level-display">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <!-- Game Canvas Screen -->
+                <section id="game-screen">
+                    <!-- Canvas Box -->
+                    <div id="canvas-container">
+                        <!-- Canvas injected here by p5.js -->
+                    </div>
+                    <p id="game-message" aria-live="polite"></p>
+                    <div id="modes">
+                        <button id="reset" type="button">Reset</button>
+                        <button id="reset-highscores" type="button">Reset Scores</button>
+                        <button id="user-mode-btn" type="button">
+                            User Play
+                        </button>
+                        <button id="ai-mode-btn" type="button">
+                            AI Training
+                        </button>
+                        <label id="speed-control" for="speed-up-slider">
+                            Simulation speed
+                            <input id="speed-up-slider" type="range" disabled />
+                            <output id="speed-value" for="speed-up-slider"
+                                >1×</output
+                            >
+                        </label>
+                    </div>
+                </section>
+
+                <section id="rewards-panel" aria-labelledby="rewards-title">
+                    <div class="rewards-heading">
+                        <div>
+                            <p class="eyebrow">Session rewards</p>
+                            <h2 id="rewards-title">Reward Center</h2>
+                        </div>
+                        <div class="reward-balance" aria-label="Reward coins">
+                            <span aria-hidden="true">★</span>
+                            <strong id="reward-coins">0</strong>
+                        </div>
+                    </div>
+                    <div class="reward-progress-wrap">
+                        <div class="reward-progress-copy">
+                            <span id="reward-rank">Rookie</span>
+                            <span id="reward-progress-text">0 / 250 coins</span>
+                        </div>
+                        <progress id="reward-progress" max="250" value="0">0%</progress>
+                    </div>
+                    <div class="reward-stats" aria-label="Reward statistics">
+                        <div><span>Achievements</span><strong id="achievement-count">0 / 6</strong></div>
+                        <div><span>Best level</span><strong id="reward-best-level">1</strong></div>
+                        <div><span>Best score</span><strong id="reward-best-score">0</strong></div>
+                    </div>
+                    <ul id="achievement-list" class="achievement-list" aria-live="polite"></ul>
+                    <p id="reward-toast" class="reward-toast" role="status" aria-live="polite"></p>
+                    <button id="reset-rewards" class="secondary-button" type="button">Reset session rewards</button>
+                </section>
+            </div>
+
+            <aside>
+                <h3>Ghosts Behavior</h3>
+                <div>
+                    <h4>Modes</h4>
+                    <ul>
+                        <li>
+                            Scatter: Ghosts move to their corners of the maze.
+                            No ghost will chase Pac-Man.
+                        </li>
+                        <li>
+                            Scared: When Pac-Man eats a power pellet, the ghosts
+                            turn blue. The ghosts movement is random and slower.
+                        </li>
+                        <li>
+                            Chase: Ghosts will chase Pac-Man. Each ghost has a
+                            different strategy to chase Pac-Man.
+                        </li>
+                    </ul>
+                </div>
+                <div id="ghost-list">
+                    <figure class="ghost">
+                        <img
+                            src="assets/sprites/ghosts/blinky.png"
+                            alt="Blinky"
+                        />
+                        <figcaption>Blinky</figcaption>
+                        <p>Goes in a straight line to Pac-Man's position.</p>
+                    </figure>
+                    <figure class="ghost">
+                        <img
+                            src="assets/sprites/ghosts/pinky.png"
+                            alt="Pinky"
+                        />
+                        <figcaption>Pinky</figcaption>
+                        <p>Tries to get in front of Pac-Man's position.</p>
+                    </figure>
+                    <figure class="ghost">
+                        <img src="assets/sprites/ghosts/inky.png" alt="Inky" />
+                        <figcaption>Inky</figcaption>
+                        <p>Tries to trap Pac-Man between himself and Blinky.</p>
+                    </figure>
+                    <figure class="ghost">
+                        <img
+                            src="assets/sprites/ghosts/clyde.png"
+                            alt="Clyde"
+                        />
+                        <figcaption>Clyde</figcaption>
+                        <p>
+                            Chases Pac-Man, but will run away if he gets too
+                            close.
+                        </p>
+                    </figure>
+                </div>
+            </aside>
+            <audio id="background-music" autoplay>
+                <source src="assets/sound/intro.wav" type="audio/wav" />
+                <source src="assets/sound/intro.aiff" type="audio/aiff" />
+            </audio>
+        </main>
+
+        <footer>
+            IHCC Pac-Man Neuroevolution Project -
+            <a href="https://github.com/IHCC-AI/Lab-Genetic-Pacman">GitHub</a>
+        </footer>
+    </body>
+</html>

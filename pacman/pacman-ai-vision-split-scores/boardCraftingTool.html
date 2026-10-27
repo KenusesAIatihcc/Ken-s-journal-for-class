@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Board Crafting Tool</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            .board-editor {
+                display: flex;
+                width: min(96%, 1200px);
+                flex-direction: column;
+                gap: 20px;
+                margin: 0 auto;
+                padding: 28px 0;
+            }
+
+            .board-editor h1 {
+                line-height: normal;
+            }
+
+            body > header h1 {
+                line-height: normal;
+            }
+
+            .board-editor section,
+            .board-actions {
+                padding: 18px;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                background: var(--surface);
+            }
+
+            .board-editor h2 {
+                margin: 0 0 14px;
+                color: var(--accent);
+                font-size: 1.2rem;
+            }
+
+            .board-editor label {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin: 4px 12px 4px 0;
+                color: var(--muted);
+            }
+
+            .board-editor input[type='number'] {
+                width: 76px;
+                padding: 8px;
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                background: var(--background);
+                color: var(--text);
+            }
+
+            .board-editor input[type='radio'] {
+                accent-color: var(--accent);
+            }
+
+            .board-editor button {
+                margin: 4px;
+            }
+
+            .board-instructions {
+                margin: 0;
+                color: var(--muted);
+            }
+
+            .board-viewport {
+                max-width: 100%;
+                overflow: auto;
+                border: 1px solid var(--border);
+                background: #fff;
+            }
+
+            #board {
+                width: max-content;
+                border-collapse: collapse;
+                background: #fff;
+                user-select: none;
+            }
+
+            #board td {
+                width: 28px;
+                min-width: 28px;
+                height: 28px;
+                padding: 0;
+                border: 1px solid #c7ced8;
+                background: #fff;
+                color: #283449;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            #board td[data-tile='1'] {
+                background: #52647d;
+                color: #fff;
+            }
+
+            #board td[data-tile='o'] {
+                color: #b87800;
+            }
+
+            #board td[data-tile='0'] {
+                color: #007b96;
+            }
+
+            #board td[data-tile='P'] {
+                color: #9a6900;
+                font-weight: 700;
+            }
+
+            #board td[data-tile='G'] {
+                color: #c0264d;
+                font-weight: 700;
+            }
+
+            #message {
+                margin-left: 8px;
+                color: var(--accent);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Board Crafting Tool</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="boardCraftingTool.html">Board Crafting Tool</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="board-editor">
+            <section>
+                <h2>Board Dimensions</h2>
+                <label
+                    >Width
+                    <input id="width" type="number" min="3" max="60" value="28"
+                /></label>
+                <label
+                    >Height
+                    <input
+                        id="height"
+                        type="number"
+                        min="3"
+                        max="60"
+                        value="24"
+                /></label>
+                <button id="create-board" type="button">Create Board</button>
+                <button id="export-board" type="button">Export Board</button>
+                <span id="message" role="status" aria-live="polite"></span>
+            </section>
+
+            <section id="pallet">
+                <h2>Tile Palette</h2>
+                <label
+                    ><input type="radio" name="tile" value="1" checked /> Wall
+                    (#)</label
+                >
+                <label
+                    ><input type="radio" name="tile" value="o" /> Power Pellet
+                    (o)</label
+                >
+                <label
+                    ><input type="radio" name="tile" value="0" /> Tunnel
+                    (0)</label
+                >
+                <label
+                    ><input type="radio" name="tile" value="P" /> Pac-Man Spawn
+                    (P)</label
+                >
+                <label
+                    ><input type="radio" name="tile" value="G" /> Ghost Spawn
+                    (G)</label
+                >
+                <label
+                    ><input type="radio" name="tile" value="." /> Erase
+                    (.)</label
+                >
+            </section>
+
+            <p class="board-instructions">
+                Click or drag to paint. Empty squares are exported as pac-dots
+                (.).
+            </p>
+
+            <div class="board-viewport">
+                <table id="board"></table>
+            </div>
+        </main>
+
+        <script src="js/BoardEditor.js" defer></script>
+    </body>
+</html>
